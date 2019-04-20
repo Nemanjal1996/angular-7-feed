@@ -1,0 +1,35 @@
+<div class="container login">
+  <div class="row h-100 align-items-center justify-content-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card=title mb-4">Please Log in!</h4>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">  
+            <div class="form-group">
+              <input 
+                formControlName="email"
+                type="email" 
+                class="form-control" 
+                placeholder="Enter your E-mail">
+            </div>
+            <div class="form-group">
+              <input 
+                formControlName="password"
+                type="password" 
+                class="form-control" 
+                placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+              <input 
+                type="submit" 
+                class="btn btn-success btn-block font-weight-bold" 
+                value="LOG IN"
+                [disabled]="loginForm.invalid || loginSubmited">
+            </div>
+            <p class="text-center mt-4 signup-message">New user? <span [routerLink]="['/signup']">Sign up now</span> to create your account!</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

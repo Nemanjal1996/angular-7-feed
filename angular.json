@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "bower_components/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
