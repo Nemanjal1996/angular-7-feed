@@ -1,0 +1,37 @@
+@import '~src/assets/scss/colors';
+
+.comment {
+    &__content {
+        &__wrapper {
+            background-color: $lightGray;
+            border-radius: .5rem;
+            &__author {
+                font-weight: bold;
+            }
+            &__text {
+                font-size: 12px;
+            }
+        }
+
+        &__actions {
+            ul {
+                list-style: none;
+                li {
+                    margin-right: .5rem;
+                    position: relative;
+                    margin-right: 1rem;
+                    font-size: 11px;
+                    &.date {
+                        &:before {
+                            content: '·';
+                            position: absolute;
+                            top: 0;
+                            left: -.7rem;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

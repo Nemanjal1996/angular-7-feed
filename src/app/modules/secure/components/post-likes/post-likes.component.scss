@@ -1,0 +1,11 @@
+@import '~src/assets/scss/colors';
+
+.likes {
+    p {
+        font-size: 12px;
+        color: $gray;
+    }
+    img {
+        width: 1rem;
+    }
+}

@@ -1,0 +1,77 @@
+@import '~src/assets/scss/colors';
+
+.post {
+    padding: 1rem 0;
+    background-color: $white;
+    &__top {
+        padding: 0 1rem;
+        &__title {
+            h4 {
+                font-size: 1.25rem;
+            }
+            .arrow {
+                width: .5rem;
+            }
+        }
+        &__createdAt {
+            color: $gray;
+            font-size: .8rem;
+            .date {
+                width: 1rem;
+            }
+        }
+    }
+
+    &__likes {
+        padding: 1rem 1rem .5rem 1rem;
+    }
+
+    &__content {
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+
+    &__image {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__actions {
+        padding: 0 1rem;
+        ul {
+            margin: 0;
+            padding: .25rem 0;
+            border-top: 1px solid #e3e3e3;
+            li {
+                padding: .25rem 0;
+                max-width: 50%;
+                flex: 1 1 50%;
+                list-style: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: $lightGray;
+                }
+                img {
+                    width: 1.2rem;
+                    margin-right: .3rem;
+                    // position: relative;
+                    // top: -.2rem;
+                }
+            }
+        }
+    }
+
+    &__comments {
+        padding: 1rem 1rem 0 1rem;
+        border-top: 1px solid #e3e3e3;
+        &__form {
+            &__input {
+                background-color: $lightGray;
+                outline: none;
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+}

@@ -1,5 +1,15 @@
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <app-status></app-status>
+<div class="dashboard">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <p class="dashboard__create-post" (click)="openCreatePostDialog()">+ Create New Post</p>
+            <app-status></app-status>
+        </div>
+    </div>
+    <div class="dashboard__posts" *ngIf="posts.length > 0">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <app-post [post]="post" *ngFor="let post of posts"></app-post>
+            </div>
+        </div>
     </div>
 </div>

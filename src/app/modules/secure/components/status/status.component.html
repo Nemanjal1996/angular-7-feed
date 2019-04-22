@@ -1,11 +1,14 @@
-<div class="status" *ngIf="status">
+<div class="status d-flex flex-column p-3" *ngIf="status">
   <form [formGroup]="statusForm" (ngSubmit)="onSubmit()">  
-    <div class="form-group">
-        <textarea 
-          formControlName="status" 
-          placeholder="What's on your mind?"
-          class="form-control">
-        </textarea>
+    <div class="d-flex align-items-center">
+      <app-user-avatar [view]="'post'"></app-user-avatar>
+      <div class="form-group w-100">
+          <textarea 
+            formControlName="status" 
+            placeholder="What's on your mind?"
+            class="form-control">
+          </textarea>
+      </div>
     </div>
     <div class="form-group">
         <input 

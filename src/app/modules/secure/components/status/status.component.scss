@@ -1,4 +1,15 @@
+@import '~src/assets/scss/colors';
+
 .status {
+    background-color: $white;
+    textarea {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        resize: none;
+        height: 50px;
+        padding: 1.3rem 0;
+    }
     &__btn__update {
         max-width: 100px;
     }

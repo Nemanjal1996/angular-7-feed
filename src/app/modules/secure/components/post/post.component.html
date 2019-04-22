@@ -1,0 +1,51 @@
+<div class="post mb-5">
+    <div class="post__top d-flex">
+        <app-user-avatar [view]="'post'"></app-user-avatar>
+        <div class="d-flex flex-column">
+            <div class="post__top__title">
+                <h4 class="m-0">
+                    {{ post?.creator?.name }}
+                    <img src="assets/images/arrow.svg" class="arrow" alt="">
+                    {{ post?.title }}
+                </h4>
+            </div>
+            <small class="post__top__createdAt">
+                <img src="assets/images/date.svg" class="date" alt="">
+                {{ post.createdAt | timeAgo }}
+            </small>
+        </div>
+    </div>
+    <div class="post__content">
+        <p>{{ post?.content }}</p>
+    </div>
+    <div class="post__image text-center">
+        <img [src]="imageBase + '' + post?.imageUrl" [alt]="post?.title">
+    </div>
+    <div class="post__likes">
+        <app-post-likes></app-post-likes>
+    </div>
+    <div class="post__actions">
+        <ul class="d-flex align-items-center text-center">
+            <li>
+                <img src="assets/images/like.svg" alt="">    
+                Like
+            </li>
+            <li>
+                <img src="assets/images/comment.svg" alt="">    
+                Comment
+            </li>
+        </ul>
+    </div>
+    <div class="post__comments">
+        <app-post-comment></app-post-comment>
+        <app-post-comment></app-post-comment>
+        <div class="post__comments__form">
+            <form>
+                <div class="form-group mb-0 d-flex align-items-center">
+                    <app-user-avatar [view]="'post'"></app-user-avatar>
+                    <input type="text" class="form-control post__comments__form__input" placeholder="Write a comment...">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

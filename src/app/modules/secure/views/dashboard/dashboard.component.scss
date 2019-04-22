@@ -1,0 +1,14 @@
+.dashboard {
+    &__create-post {
+        font-size: 14px;
+        margin: 0 0 7px 0;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__posts {
+        margin-top: 25px;
+    }
+}

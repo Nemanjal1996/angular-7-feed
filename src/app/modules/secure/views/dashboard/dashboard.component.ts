@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CreatePostComponent } from '../../components/create-post/create-post.component';
+import { FeedService } from 'src/app/services';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public posts: any[] = [];
+  public totalItems: number;
 
-  constructor() { }
+  constructor(private dialog: MatDialog,
+              private feedService: FeedService) { }
 
   ngOnInit() {
+    this.feedService.getPosts()
+      .subscribe(response => {
+        this.posts = response.posts;
+        this.totalItems = response.totalItems;
+      });
   }
 
+  openCreatePostDialog(): void {
+    const dialogRef = this.dialog.open(CreatePostComponent, {
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.posts.push(result);
+        console.log(result)
+      }
+    });
+  }
 }

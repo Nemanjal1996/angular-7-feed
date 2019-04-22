@@ -1,0 +1,13 @@
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+.text-decoration-hover-underline {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

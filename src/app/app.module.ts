@@ -1,10 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard, AuthService, Guestuard, HttpService, UserService } from './services';
-
+import { AuthGuard, AuthService, Guestuard, HttpService, UserService, FeedService } from './services';
 
 @NgModule({
   declarations: [
@@ -13,14 +13,16 @@ import { AuthGuard, AuthService, Guestuard, HttpService, UserService } from './s
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,
     AuthGuard,
     Guestuard,
     HttpService,
-    UserService
+    UserService,
+    FeedService
   ],
   bootstrap: [AppComponent]
 })
