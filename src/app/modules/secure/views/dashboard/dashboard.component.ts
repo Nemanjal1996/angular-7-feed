@@ -16,11 +16,7 @@ export class DashboardComponent implements OnInit {
               private feedService: FeedService) { }
 
   ngOnInit() {
-    this.feedService.getPosts()
-      .subscribe(response => {
-        this.posts = response.posts;
-        this.totalItems = response.totalItems;
-      });
+    this.getPosts();
   }
 
   openCreatePostDialog(): void {
@@ -30,9 +26,20 @@ export class DashboardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.posts.push(result);
-        console.log(result)
+        this.posts.unshift(result);
       }
     });
+  }
+
+  onDeletedPost(e) {
+    this.getPosts();
+  }
+
+  getPosts(): void {
+    this.feedService.getPosts()
+      .subscribe(response => {
+        this.posts = response.posts;
+        this.totalItems = response.totalItems;
+      });
   }
 }

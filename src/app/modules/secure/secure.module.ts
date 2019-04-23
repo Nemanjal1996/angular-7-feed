@@ -15,6 +15,8 @@ import { TimeAgoPipe } from 'time-ago-pipe';
 import { PostLikesComponent } from './components/post-likes/post-likes.component';
 import { PostCommentComponent } from './components/post-comment/post-comment.component';
 
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     SecureComponent,
@@ -33,7 +35,8 @@ import { PostCommentComponent } from './components/post-comment/post-comment.com
     SecureRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgbDropdownModule
   ],
   entryComponents: [ CreatePostComponent ]
 })

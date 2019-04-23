@@ -1,7 +1,7 @@
 <div class="post mb-5">
-    <div class="post__top d-flex">
+    <div class="post__top d-flex justify-content-between">
         <app-user-avatar [view]="'post'"></app-user-avatar>
-        <div class="d-flex flex-column">
+        <div class="d-flex d-flex-1 flex-column">
             <div class="post__top__title">
                 <h4 class="m-0">
                     {{ post?.creator?.name }}
@@ -13,6 +13,15 @@
                 <img src="assets/images/date.svg" class="date" alt="">
                 {{ post.createdAt | timeAgo }}
             </small>
+        </div>
+        <div class="d-flex d-flex-1 post__top__actions justify-content-end">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn" id="dropdownBasic1" ngbDropdownToggle></button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem (click)="deletePost(post._id)">Delete</button>
+                    <button ngbDropdownItem (click)="openEditPostDialog(post)">Edit</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="post__content">
