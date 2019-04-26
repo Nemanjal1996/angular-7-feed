@@ -1,4 +1,4 @@
-import { Post } from './post';
+import { Post } from 'src/app/interfaces';
 
 export interface UserLogin {
     email: string;
@@ -11,13 +11,6 @@ export interface UserSignup {
     name: string;
 }
 
-export interface UserData {
-    email?: string;
-    name?: string;
-    status?: string;
-    posts?: Post[];
-}
-
 export interface LoginData {
     token: string;
     userId: string;
@@ -27,3 +20,13 @@ export interface LoginData {
 export interface SignupData {
     userId: string;
 }
+
+export interface UserData {
+    email?: string;
+    name?: string;
+    status?: string;
+    posts?: Post[];
+    _id?: string;
+    _v?: string;
+}
+

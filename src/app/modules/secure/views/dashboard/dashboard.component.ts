@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.posts.unshift(result);
+        this.getPosts();
       }
     });
   }

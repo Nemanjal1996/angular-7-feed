@@ -53,8 +53,7 @@ export class CreatePostComponent {
     formData.append('image', this.fileData || this.data.imageUrl);
     formData.append('content', this.postForm.get('content').value);
 
-    if(this.post._id) {
-      console.log(this.post);
+    if(this.post && this.post._id) {
       this.feedService.updatePost(formData, this.post._id)
       .subscribe(response => {
         this.dialogRef.close(response);

@@ -1,3 +1,5 @@
+import { Like, Comment } from 'src/app/interfaces';
+
 export interface Post {
     title?: string;
     imageUrl?: string;
@@ -7,6 +9,8 @@ export interface Post {
     updatedAt?: string;
     __v?: number;
     _id?: string;
+    likes?: Like[];
+    comments?: Comment[];
 }
 
 export interface Creator {
@@ -27,3 +31,4 @@ export interface CreatedPost {
     creator: Creator;
     post: Post;
 }
+

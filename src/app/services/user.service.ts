@@ -23,4 +23,9 @@ export class UserService {
       options: this.httpService.options
     });
   }
+
+  getUserData() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser;
+  }
 }

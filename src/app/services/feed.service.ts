@@ -42,4 +42,11 @@ export class FeedService {
       options: this.httpService.options
     });
   }
+
+  postLike(id: string): Observable<CreatedPost | string> {
+    return this.httpService.putData('feed/post/' + id + '/like', {}, {
+      headers: this.httpService.headers,
+      options: this.httpService.options
+    });
+  }
 }

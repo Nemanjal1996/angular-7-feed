@@ -1,7 +1,9 @@
-<div class="likes">
-                 
-    <p class="m-0">
-        <img src="assets/images/like.svg" alt=""> 
-        Nemanja Lazarevic, Milos Misic, and 32 others
-    </p>
+<div class="likes d-flex">
+    <img src="assets/images/like.svg" alt="Like Icon">
+    <ul class="d-flex m-0 p-0 ml-2">
+        <li *ngFor="let like of likes | slice:0:3; let i = index;" class="ml-1 text-decoration-hover-underline cursor-pointer">
+            {{ like.userId.name + (i < 3 ? ', ' : null) }}
+        </li>
+        <li class="ml-1 text-decoration-hover-underline cursor-pointer" *ngIf="totalLikes > 3"> and {{ totalLikes - 3 }} more</li>
+    </ul>
 </div>

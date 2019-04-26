@@ -22,7 +22,6 @@
         }
 
         &__actions {
-            
         }
     }
 
@@ -55,6 +54,9 @@
                 cursor: pointer;
                 &:hover {
                     background-color: $lightGray;
+                }
+                &.liked {
+                    color: blue;
                 }
                 img {
                     width: 1.2rem;

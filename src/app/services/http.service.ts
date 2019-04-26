@@ -33,7 +33,7 @@ export class HttpService {
   getHeaders(): any {
     if (this.isLoggedIn()) {
       return new HttpHeaders({
-        'Content-type': 'application/json; application/x-www-form-urlencoded;',
+        'Content-type': 'application/json',
         Authorization: `bearer ${this.getToken()}`
       });
     } else {
