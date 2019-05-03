@@ -3,6 +3,7 @@ import { HttpService } from './http.service';
 import { Observable } from 'rxjs';
 import { UserLogin, SignupData, UserSignup, LoginData } from '../interfaces';
 import { map } from 'rxjs/operators';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +25,11 @@ export class AuthService {
     );
   }
 
-  signup(data: UserSignup): Observable<SignupData> {
+  signup(data: any): Observable<SignupData> {
     return this.httpService.putData('auth/signup', data, {
-      headers: this.httpService.headers,
+      headers: new HttpHeaders({
+        Authorization: `bearer ${this.httpService.getToken()}`
+      }),
       options: this.httpService.options
     });
   }

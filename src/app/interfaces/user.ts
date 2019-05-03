@@ -8,6 +8,7 @@ export interface UserLogin {
 export interface UserSignup {
     email: string;
     password: string;
+    image: any;
     name: string;
 }
 
@@ -15,6 +16,7 @@ export interface LoginData {
     token: string;
     userId: string;
     name: string;
+    imageUrl: string;
 }
 
 export interface SignupData {

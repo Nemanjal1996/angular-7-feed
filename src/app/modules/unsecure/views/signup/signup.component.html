@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card=title mb-4">Please Signup!</h4>
-          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">  
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">  
             <div class="form-group">
               <label 
                 for="email" 
@@ -42,6 +42,13 @@
                 formControlName="name"
                 class="form-control" 
                 placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <input 
+                type="file"
+                name="image"
+                formControlName="image"
+                (change)="onSelectedFile($event)">
             </div>
             <div class="form-group">
               <input type="submit" 
